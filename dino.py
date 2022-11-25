@@ -1,16 +1,12 @@
-import os
-import sys
-import math
-import random
-import pygame
+import os, sys, math, random, pygame
 
-WIDTH = 623
+WIDTH = 700
 HEIGHT = 150
 
 pygame.init()
 pygame.mixer.init()
 screen = pygame.display.set_mode( (WIDTH, HEIGHT) )
-pygame.display.set_caption('Dino')
+pygame.display.set_caption('Chrome Dino')
 
 class BG:
 
@@ -55,19 +51,16 @@ class Dino:
         self.show()
 
     def update(self, loops):
-        # jumping
         if self.jumping:
             self.y -= self.dy
             if self.y <= self.jump_stop:
                 self.fall()
         
-        # falling
         elif self.falling:
             self.y += self.gravity * self.dy
             if self.y >= self.fall_stop:
                 self.stop()
 
-        # walking
         elif self.onground and loops % 4 == 0:
             self.texture_num = (self.texture_num + 1) % 3
             self.set_texture()
@@ -167,8 +160,7 @@ class Game:
         big_font = pygame.font.SysFont('monospace', 24, bold=True)
         small_font = pygame.font.SysFont('monospace', 18)
         self.big_lbl = big_font.render(f'G A M E  O V E R', 1, (0, 0, 0))
-        self.small_lbl = small_font.render(f'(press r to restart)', 1, (0, 0, 0))
-
+        self.small_lbl = small_font.render(f'(R)ESTART ?', 1, (0, 0, 0))
 
     def start(self):
         self.playing = True
@@ -182,16 +174,13 @@ class Game:
         return loops % 100 == 0
 
     def spawn_cactus(self):
-        # list with cactus
         if len(self.obstacles) > 0:
             prev_cactus = self.obstacles[-1]
             x = random.randint(prev_cactus.x + self.dino.width + 84, WIDTH + prev_cactus.x + self.dino.width + 84)
 
-        # empty list
         else:
             x = random.randint(WIDTH + 100, 1000)
 
-        # create the new cactus
         cactus = Cactus(x)
         self.obstacles.append(cactus)
 
@@ -200,32 +189,26 @@ class Game:
 
 def main():
 
-    # objects
     game = Game()
     dino = game.dino
 
-    # variables
     clock = pygame.time.Clock()
     loops = 0
     over = False
 
-    # mainloop
     while True:
 
         if game.playing:
 
             loops += 1
 
-            # --- BG ---
             for bg in game.bg:
                 bg.update(-game.speed)
                 bg.show()
 
-            # --- dino ---
             dino.update(loops)
             dino.show()
 
-            # --- cactus ---
             if game.tospawn(loops):
                 game.spawn_cactus()
 
@@ -233,18 +216,15 @@ def main():
                 cactus.update(-game.speed)
                 cactus.show()
 
-                # collision
                 if game.collision.between(dino, cactus):
-                   over = True
+                    over = True
             
             if over:
                 game.over()
 
-            # -- score ---
             game.score.update(loops)
             game.score.show()
 
-        # events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
