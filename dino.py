@@ -5,7 +5,7 @@ HEIGHT = 150
 
 pygame.init()
 pygame.mixer.init()
-screen = pygame.display.set_mode( (WIDTH, HEIGHT) )
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Chrome Dino')
 
 class BG:
@@ -65,7 +65,6 @@ class Dino:
             self.texture_num = (self.texture_num + 1) % 3
             self.set_texture()
         
-
     def show(self):
         screen.blit(self.texture, (self.x, self.y))
 
@@ -73,7 +72,6 @@ class Dino:
         path = os.path.join(f'assets/images/dino{self.texture_num}.png')
         self.texture = pygame.image.load(path)
         self.texture = pygame.transform.scale(self.texture, (self.width, self.height))
-
 
     def jump(self):
         self.jumping = True
