@@ -1,13 +1,6 @@
-# Python program to demonstrate
-# 8 bit game
-
-
 import pygame
-import sys
 import random
 
-
-# initialize the constructor
 pygame.init()
 res = (720, 720)
 
@@ -132,10 +125,8 @@ def game_over():
 		# updates frames of the game
 		pygame.display.update()
 
-
 pygame.draw.rect(screen, startd, [100, height - 100, 40, 20])
 pygame.draw.rect(screen, startd, [width - 180, height - 100, 40, 50])
-
 
 
 # function for body of the game
