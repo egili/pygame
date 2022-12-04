@@ -2,11 +2,11 @@ import pygame, random, sys
 from pygame.locals import *
 
 #import RPi.GPIO as gp
-import time
+#import time
 
 # gp.setmode(gp.BCM)
-# gp.setup(17, gp.OUT, initial = gp.LOW)
 # gp.setup(18, gp.OUT, initial = gp.LOW)
+# gp.setup(22, gp.OUT, initial = gp.LOW)
 
 LARGURA = 600 # altura e largura da janela de jogo
 ALTURA = 600
@@ -34,7 +34,7 @@ def ouvirTeclaASerPressionada():
                     pygame.init()
                     return
 
-# a funcao dinoColidiuComCacto recebe os parametro: 
+# a funcao dinoColidiuComCacto recebe os parametros: 
 # rectDinossaurinho: as coordenadas retangulares do personagem
 # arrayCacto: o array com todos os cactos que estao na tela
 
@@ -165,10 +165,10 @@ while True:
 
                 # acende dois leds quando o jogo finalizar
                 #gp.output(18, gp.HIGH)
-                #gp.output(17, gp.HIGH)
+                #gp.output(22, gp.HIGH)
                 #time.sleep(1)
                 #gp.output(18, gp.LOW)
-                #gp.output(17, gp.HIGH)
+                #gp.output(22, gp.HIGH)
 
             break
 
