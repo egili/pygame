@@ -14,9 +14,10 @@ ALTURA = 600
 # define as cores que serao utilizadas nos textos e no fundo 
 COR_BRANCA = (255, 255, 255)
 COR_PRETA = (0, 0, 0)
-COR_VERMELHA = (255, 0, 0)
+COR_VERMELHA = (140, 23, 23)
 COR_AMARELA = (255, 255, 0)
 COR_LARANJA = (238, 173, 45)
+COR_CINZA = (128, 128, 128)
 
 ADICIONA_NOVO_CACTO_A_CADA = 15 # a cada 15 pontos vai adicionar um novo cacto
 
@@ -26,6 +27,10 @@ def ouvirTeclaASerPressionada():
             if event.type == QUIT: # clicar no X de fechar a janela
                 pygame.quit()
                 sys.exit()
+            
+            #if event.type == MOUSEBUTTONDOWN:
+                #pygame.init()
+
             if event.type == KEYDOWN:
                 if event.key == K_ESCAPE: # esc fecha o jogo
                     pygame.quit()
@@ -70,9 +75,12 @@ dinossaurinho = pygame.image.load('assets/images/dino.png') # pega a imagem do d
 rectDinossaurinho = dinossaurinho.get_rect() # define o Rect (objeto que armazena coordenadas retangulares), area ocupada pela imagem do personagem
 cacto = pygame.image.load('assets/images/cacto.png') # pega a imagem do cacto e salva na variavel
 
+#clicou = pygame.mouse.get_pressed(1)
+
 # mostra a tela de inicio
-escreveTexto('20669 - 21088 - 21816', fonteTexto, superficieJanelaJogo, 175 , 250, COR_AMARELA)
-escreveTexto('Cotuca/4° Semestre - 2022', fonteTexto, superficieJanelaJogo, 150, 300, COR_AMARELA)
+escreveTexto('20669 - 21088 - 21816', fonteTexto, superficieJanelaJogo, 175 , 250, COR_CINZA)
+escreveTexto('Cotuca/4° Semestre - 2022', fonteTexto, superficieJanelaJogo, 150, 300, COR_CINZA)
+escreveTexto('Pressione espaço para começar', fonteTexto, superficieJanelaJogo, 125, 350, COR_CINZA)
 pygame.display.update() # atualiza a tela
 ouvirTeclaASerPressionada() # chama a funcao que aguarda o espaco ou esc ser pressionado
 
@@ -145,7 +153,7 @@ while True:
             if cactos['cactoRect'].top > ALTURA:
                 chuvaDeCactos.remove(cactos)
 
-        superficieJanelaJogo.fill(COR_BRANCA) # desenhar na tela a janela de jogo, pintando o fundo de preto
+        superficieJanelaJogo.fill(COR_CINZA) # desenhar na tela a janela de jogo, pintando o fundo de preto
 
         #  mostra a pontuacao atual e a maxima
         escreveTexto('Pontos: %s' % (pontuacao), fonteTexto, superficieJanelaJogo, 450 , 0, COR_LARANJA) # posicao 450 no eixo x e 0 no eixo y
@@ -178,8 +186,8 @@ while True:
     # para o jogo e mostra a tela de fim de jogo
 
     escreveTexto('Fim de Jogo', fonteTexto, superficieJanelaJogo, 200, 200, COR_VERMELHA) # posicao: 200 no eixo x e 200 no eixo y 
-    escreveTexto('Aperte Espaço para jogar novamente', fonteTexto, superficieJanelaJogo, 120, 250, COR_LARANJA) # posicao: 120 no eixo x e 250 no eixo y 
-    escreveTexto(' ou Esc para sair', fonteTexto, superficieJanelaJogo, 200, 300, COR_LARANJA) # posicao: 200 no eixo x e 300 no eixo y 
+    escreveTexto('Aperte Espaço para jogar novamente', fonteTexto, superficieJanelaJogo, 120, 250, COR_PRETA) # posicao: 120 no eixo x e 250 no eixo y 
+    escreveTexto(' ou Esc para sair', fonteTexto, superficieJanelaJogo, 200, 300, COR_PRETA) # posicao: 200 no eixo x e 300 no eixo y 
 
     pygame.display.update() # atualiza a tela
     ouvirTeclaASerPressionada() # chama a funcao que aguarda o espaco ou esc ser pressionado
