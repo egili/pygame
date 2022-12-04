@@ -1,0 +1,17 @@
+https://www.pygame.org/docs/ref/rect.html
+
+https://www.kodeco.com/2795-beginning-game-programming-for-teens-with-python
+
+https://docs.python.org/3/tutorial/datastructures.html
+
+https://www.pygame.org/docs/ref/transform.html
+
+https://www.pygame.org/docs/ref/rect.html#pygame.Rect.move_ip
+
+https://realpython.com/python-dicts/
+
+https://www.pygame.org/docs/ref/display.html
+
+https://www.pygame.org/docs/ref/rect.html
+
+https://coderslegacy.com/python/pygame-mouse-click/
