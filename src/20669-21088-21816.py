@@ -71,7 +71,8 @@ rectDinossaurinho = dinossaurinho.get_rect() # define o Rect (objeto que armazen
 cacto = pygame.image.load('assets/images/cacto.png') # pega a imagem do cacto e salva na variavel
 
 # mostra a tela de inicio
-escreveTexto('20669 - 21088 - 21816 asddsad', fonteTexto, superficieJanelaJogo, 125 , 250, COR_AMARELA)
+escreveTexto('20669 - 21088 - 21816', fonteTexto, superficieJanelaJogo, 175 , 250, COR_AMARELA)
+escreveTexto('Cotuca/4° Semestre - 2022', fonteTexto, superficieJanelaJogo, 150, 300, COR_AMARELA)
 pygame.display.update() # atualiza a tela
 ouvirTeclaASerPressionada() # chama a funcao que aguarda o espaco ou esc ser pressionado
 
