@@ -6,7 +6,7 @@ HEIGHT = 150
 pygame.init()
 pygame.mixer.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('Chrome Dino')
+pygame.display.set_caption('20669 - 21088 - 21816 ')
 
 class BG:
 
