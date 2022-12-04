@@ -162,6 +162,14 @@ while True:
             if pontuacao > pontuacaoMaxima:
                 pontuacaoMaxima = pontuacao # definindo uma nova pontuacao maxima
                 parouJogo = True
+
+                # acende dois leds quando o jogo finalizar
+                #gp.output(18, gp.HIGH)
+                #gp.output(17, gp.HIGH)
+                #time.sleep(1)
+                #gp.output(18, gp.LOW)
+                #gp.output(17, gp.HIGH)
+
             break
 
         mainClock.tick(40) # seta o fps 
