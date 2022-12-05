@@ -15,3 +15,5 @@ https://www.pygame.org/docs/ref/display.html
 https://www.pygame.org/docs/ref/rect.html
 
 https://coderslegacy.com/python/pygame-mouse-click/
+
+https://www.geeksforgeeks.org/8-bit-game-using-pygame/
